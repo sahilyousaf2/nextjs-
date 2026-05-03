@@ -1,4 +1,4 @@
-name: NextjS Build
+name: NextJS Build
 
 on: 
   push:
@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6.0.2
-      - name: Setup Node JS 
-      - uses: actions/setup-node@v6.4.0
+      - uses: actions/checkout@v4
+
+      - name: Setup Node JS
+        uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 22
+
       - name: Install Dependencies
         run: npm install
+
       - name: Build Nextjs App
         run: npm run build
